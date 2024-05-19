@@ -1,0 +1,25 @@
+@if(direction === "vertical") {
+<div class="container stack {{reversed ? 'reversed-column' : '' }} ">
+    <div class="lights-container stack">
+        <div class="light red {{light === 'red' ? 'execute': ''}}">
+        </div>
+        <div class="light yellow {{isFailure ? 'flicker' : ''}} {{light === 'yellow' ? 'execute': ''}}">
+        </div>
+        <div class="light green {{light === 'green' ? 'execute': ''}}">
+        </div>
+    </div>
+    <button mat-button [disabled]="light === 'red'" (click)="cross()">Cross</button>
+</div>
+} @else {
+<div class="container {{reversed ? 'reversed-row' : ''}}">
+    <button mat-button [disabled]="light === 'red'" (click)="cross()">Cross</button>
+    <div class="lights-container">
+        <div class="light red {{light === 'red' ? 'execute': ''}}">
+        </div>
+        <div class="light yellow {{isFailure ? 'flicker' : ''}} {{light === 'yellow' ? 'execute': ''}}">
+        </div>
+        <div class="light green {{light === 'green' ? 'execute': ''}}">
+        </div>
+    </div>
+</div>
+}
